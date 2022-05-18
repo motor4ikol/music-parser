@@ -6,12 +6,12 @@ from colorama import init, Fore
 
 from config import out_folder, name, debug
 
-
 init()
 
 
 def debug_print(debug_text):
-    if debug: print(Fore.CYAN + "DEBUG: " + Fore.YELLOW + str(debug_text) + "\n", Fore.RED + 100 * "-", Fore.RESET)
+    if debug:
+        print(Fore.CYAN + "DEBUG: " + Fore.YELLOW + str(debug_text) + "\n", Fore.RED + 100 * "-", Fore.RESET)
 
 
 def parse(f_name):
@@ -30,7 +30,7 @@ def parse(f_name):
 def writer(list, f_name=name):
     with open(out_folder + "\\" + f_name + ".csv") as f:
         reader = csv.reader(f)
-    debug_print(reader)
+    debug_print(reader)  # TODO: Добавить работу с csv
 
 
 if not os.path.exists(out_folder):
