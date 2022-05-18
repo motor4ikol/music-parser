@@ -1,0 +1,6 @@
+/venv
+/out
+/.idea
+test.txt
+__pycache__/config.cpython-39.pyc
+__pycache__/
