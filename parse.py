@@ -40,7 +40,7 @@ def dict_gen(ls):
 def writer(list, f_name=name):
     with open(out_folder + "\\" + f_name + ".csv") as f:
         writer = csv.writer(f)
-    debug_print(writer)  # TODO: Добавить работу с csv
+    debug_print(writer)
 
 
 if not os.path.exists(out_folder):
