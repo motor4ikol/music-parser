@@ -15,7 +15,7 @@ def debug_print(debug_text):
 
 
 def parse(f_name):
-    with open(f_name + ".txt", encoding="utf-8") as file:
+    with open(f_name + ".txt", encoding='utf-8') as file:
         t = file.read()
     ls = t.split("\n")
 
@@ -26,14 +26,25 @@ def parse(f_name):
 
     return ls
 
+def dict_gen(ls):
+    dictio = []
+    ls = [['Yellow Fire', 'Звёзды'], ['Melham_Music', 'Новое Поколение'], ['Yellow Fire, Лига кубизма', 'Этот новый год'], ['Yellow Fire', 'Я люблю майнкрафт'], ['Yellow Fire', 'Тотем бессмертия'], ['Yellow Fire', 'Будь тише'], ['Калимуллин Арслан', 'С эчпочмаками в зубах'], ['Yellow Fire, Матушка, Jack Looney', 'В незеритовой броне'], ['Yellow Fire', 'Лига кубизма'], ['Yellow Fire', 'Пчела упала'], ['Bav', 'ВУГЛУ'], ['kirkiimad', 'Майнкрафт'], ['Фикс', 'Кожаные штаны'], ['Арслан Калимуллин', 'Жёлтый персик'], ['Фиксай', 'Лук Батун'], ['Bav', 'Пчелобав урод'], ['Yellow Fire', 'Элитры']]
+    for i in ls:
+        dc = dict()
+        dc["author"] = i[0]
+        dc["song"] = i[1]
+        dictio.append(dc)
+    debug_print(dictio)
+    return dictio
 
 def writer(list, f_name=name):
     with open(out_folder + "\\" + f_name + ".csv") as f:
-        reader = csv.reader(f)
-    debug_print(reader)  # TODO: Добавить работу с csv
+        writer = csv.writer(f)
+    debug_print(writer)  # TODO: Добавить работу с csv
 
 
 if not os.path.exists(out_folder):
     os.mkdir(out_folder)
 
 writer(parse(name))
+dict_gen([])
