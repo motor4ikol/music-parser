@@ -4,9 +4,15 @@ import os
 
 from colorama import init, Fore
 
-from config import out_folder, name, debug
+from config import out_folder, name, debug, in_folder
 
-init()
+
+def folder_sc(folder = in_folder):
+    try:
+        sc_res = os.listdir(f"{in_folder}/")
+        debug_print(sc_res)
+    except:
+        debug_print("Ошибка вывода.")
 
 
 def debug_print(debug_text):
