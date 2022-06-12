@@ -1,8 +1,6 @@
-import csv
-
 import os
 
-from colorama import init, Fore
+from colorama import Fore
 
 from config import out_folder, name, debug, in_folder
 
@@ -45,8 +43,8 @@ def dict_gen(ls):
 
 def writer(list, f_name=name):
     with open(out_folder + "\\" + f_name + ".csv") as f:
-        writer = csv.writer(f)
-    debug_print(writer)
+        pass
+
 
 
 if not os.path.exists(out_folder):
